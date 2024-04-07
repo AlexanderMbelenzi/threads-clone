@@ -133,7 +133,6 @@ const replyToPost = async (req, res) => {
 		res.status(500).json({ error: err.message });
 	}
 };
-
 const getFeedPosts = async (req, res) => {
 	try {
 		const userId = req.user._id;
@@ -142,15 +141,24 @@ const getFeedPosts = async (req, res) => {
 			return res.status(404).json({ error: "User not found" });
 		}
 
-		const following = user.following;
-
-		const feedPosts = await Post.find({ postedBy: { $in: following } }).sort({ createdAt: -1 });
+		let feedPosts;
+    
+    // Check if the user follows anyone
+    if (user.following.length > 0) {
+      const following = user.following;
+      // Retrieve posts from followed users
+      feedPosts = await Post.find({ postedBy: { $in: following } }).sort({ createdAt: -1 });
+    } else {
+      // If the user follows no one, retrieve random posts
+      feedPosts = await Post.aggregate([{ $sample: { size: 10 } }]); // Adjust the size as needed
+    }
 
 		res.status(200).json(feedPosts);
 	} catch (err) {
 		res.status(500).json({ error: err.message });
 	}
 };
+
 
 const getUserPosts = async (req, res) => {
 	const { username } = req.params;
