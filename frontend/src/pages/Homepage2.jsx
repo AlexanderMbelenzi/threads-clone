@@ -6,7 +6,7 @@ import { useRecoilState } from "recoil";
 import postsAtom from "../atoms/postsAtom";
 import SuggestedUsers from "../components/SuggestedUsers";
 
-const HomePage = () => {
+const HomePage2 = () => {
 	const [posts, setPosts] = useRecoilState(postsAtom);
 	const [loading, setLoading] = useState(true);
 	const showToast = useShowToast();
@@ -15,7 +15,7 @@ const HomePage = () => {
 			setLoading(true);
 			setPosts([]);
 			try {
-				const res = await fetch("/api/posts/feed");
+				const res = await fetch("/api/posts/feed2");
 				const data = await res.json();
 				if (data.error) {
 					showToast("Error", data.error, "error");
@@ -60,4 +60,4 @@ const HomePage = () => {
 	);
 };
 
-export default HomePage;
+export default HomePage2;

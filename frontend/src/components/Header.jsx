@@ -5,6 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
 import { Link as RouterLink } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
+import HomePage2 from "../pages/Homepage2";
 import useLogout from "../hooks/useLogout";
 import authScreenAtom from "../atoms/authAtom";
 import { BsFillChatQuoteFill } from "react-icons/bs";
@@ -29,6 +30,20 @@ const Header = () => {
 				</Link>
 			)}
 
+			
+            {user && (
+				<Flex alignItems={"center"} gap={4}>
+					
+					<Link as={RouterLink} to={`/`}>
+					for you
+					</Link>
+					
+				</Flex>
+
+            )}
+
+
+
 			<Image
 				cursor={"pointer"}
 				alt='logo'
@@ -36,6 +51,20 @@ const Header = () => {
 				src={colorMode === "dark" ? "/light-logo.svg" : "/dark-logo.svg"}
 				onClick={toggleColorMode}
 			/>
+
+
+
+            {user && (
+				<Flex alignItems={"center"} gap={4}>
+					
+					<Link as={RouterLink} to={`/home2`}>
+					following
+					</Link>
+					
+				</Flex>
+
+
+			)}
 
 			{user && (
 				<Flex alignItems={"center"} gap={4}>
@@ -48,10 +77,13 @@ const Header = () => {
 					<Link as={RouterLink} to={`/settings`}>
 						<MdOutlineSettings size={20} />
 					</Link>
+				
 					<Button size={"xs"} onClick={logout}>
 						<FiLogOut size={20} />
 					</Button>
 				</Flex>
+
+
 			)}
 
 			{!user && (
