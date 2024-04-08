@@ -22,8 +22,9 @@ const SuggestedUser = ({ user }) => {
 			{/* right side */}
 			<Button
 				size={"sm"}
+				rounded={"20px"}
 				color={following ? "black" : "white"}
-				bg={following ? "white" : "blue.400"}
+				bg={following ? "white" : "#FF4500"}
 				onClick={handleFollowUnfollow}
 				isLoading={updating}
 				_hover={{

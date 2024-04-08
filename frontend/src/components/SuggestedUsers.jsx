@@ -1,8 +1,10 @@
-import { Box, Flex, Skeleton, SkeletonCircle, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, Skeleton, SkeletonCircle, Text, Button, Input,  InputGroup, InputLeftElement  } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import SuggestedUser from "./SuggestedUser";
 import useShowToast from "../hooks/useShowToast";
 
+import { Link as RouterLink } from "react-router-dom";
+import { SearchIcon } from "@chakra-ui/icons";
 const SuggestedUsers = () => {
 	const [loading, setLoading] = useState(true);
 	const [suggestedUsers, setSuggestedUsers] = useState([]);
@@ -30,11 +32,51 @@ const SuggestedUsers = () => {
 	}, [showToast]);
 
 	return (
+
+		<Box pr={80}  position="fixed"    pl={3}  marginTop="-60px">
+
+ 
+                 
+					
 		<>
-			<Text mb={4} fontWeight={"bold"}>
-				Suggested Users
+		<Flex alignItems="center" gap={2}>
+  <InputGroup size="sm">
+    <InputLeftElement pointerEvents="none">
+      <SearchIcon  />
+    </InputLeftElement>
+    <Input
+      as={RouterLink}
+      to="/chat"
+      placeholder="Search for a user"
+      borderRadius="full"
+      bg="#2B2B2B"
+      
+    />
+  </InputGroup>
+</Flex>
+
+
+
+			<Text mb={4} mt={4}   padding={4}  backgroundColor={"#2B2B2B"} rounded={"xl"} fontWeight={"bold"}>
+				<p  >
+                 
+			Subscribe to Premium
+				</p>
+				<Text mt={2} mb={2}   fontWeight={"normal"}  >
+				Subscribe to unlock new features and if eligible, receive a share of ads revenue.
+				</Text>
+				<button   style={{ backgroundColor: "#FF4500", borderRadius: "20px", fontSize: "sm", padding: "0.5rem 1rem", color: "white" }}>Subscribe</button>
+				
+				
+        </Text  >
+
+		
+			<Flex direction={"column"}  backgroundColor={"#2B2B2B"} rounded={"xl"}  mb={4} padding={4}  gap={4}>
+			<Text mb={4}  fontWeight={"bold"}>
+			Suggested users
+      
 			</Text>
-			<Flex direction={"column"} gap={4}>
+
 				{!loading && suggestedUsers.map((user) => <SuggestedUser key={user._id} user={user} />)}
 				{loading &&
 					[0, 1, 2, 3, 4].map((_, idx) => (
@@ -56,7 +98,11 @@ const SuggestedUsers = () => {
 					))}
 			</Flex>
 		</>
+
+		</Box>
+
 	);
+
 };
 
 export default SuggestedUsers;

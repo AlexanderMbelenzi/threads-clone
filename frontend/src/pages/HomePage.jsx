@@ -33,8 +33,19 @@ const HomePage = () => {
 	}, [showToast, setPosts]);
 
 	return (
-		<Flex gap='10' alignItems={"flex-start"}>
-			<Box flex={70}>
+		<Flex gap='10' mt={10} alignItems={"flex-start"}>
+			
+			<Box 
+			
+				flex={20}
+				display={{
+					base: "none",
+					md: "block",
+				}}
+			>bbbbbbnnnnnnn
+			</Box>
+			
+			<Box flex={60}  >
 				{!loading && posts.length === 0 && <h1>Welcome to bidoi, share your ideas</h1>}
 
 				{loading && (
@@ -48,13 +59,14 @@ const HomePage = () => {
 				))}
 			</Box>
 			<Box
-				flex={30}
+			
+				flex={35}
 				display={{
 					base: "none",
 					md: "block",
 				}}
 			>
-				<SuggestedUsers />
+				<SuggestedUsers    />
 			</Box>
 		</Flex>
 	);
