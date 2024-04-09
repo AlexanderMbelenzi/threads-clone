@@ -92,7 +92,7 @@ const PostPage = () => {
 				</Flex>
 			</Flex>
 
-			<Text my={3}>{currentPost.text}</Text>
+			<Text my={3}>{currentPost.text}  fontSize={"sm"}  </Text>
 
 			{currentPost.img && (
 				<Box borderRadius={6} overflow={"hidden"} border={"1px solid"} borderColor={"gray.light"}>
@@ -108,7 +108,7 @@ const PostPage = () => {
 
 			<Flex justifyContent={"space-between"}>
 				<Flex gap={2} alignItems={"center"}>
-					<Text fontSize={"2xl"}>  <Image src={wavingemoji} alt="emoji" w={18} h={14} ml={-3} />         </Text>
+					<Text fontSize={"2xl"}>  <Image src={wavingemoji} alt="emoji" w={20} h={14} ml={-5} />         </Text>
 					<Text color={"gray.light"}>Get the app to like, reply and post.</Text>
 				</Flex>
 				<Button>Get</Button>
