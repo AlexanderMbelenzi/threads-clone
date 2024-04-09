@@ -65,7 +65,7 @@ const SuggestedUsers = () => {
 				<Text mt={2} mb={2}   fontWeight={"normal"}  >
 				Subscribe to unlock new features and if eligible, receive a share of ads revenue.
 				</Text>
-				<button   style={{ backgroundColor: "#FF4500", borderRadius: "20px", fontSize: "sm", padding: "0.5rem 1rem", color: "white" }}>Subscribe</button>
+				<button   style={{ backgroundColor: "#1DA1F2", borderRadius: "20px", fontSize: "sm", padding: "0.5rem 1rem", color: "white" }}>Subscribe</button>
 				
 				
         </Text  >
