@@ -75,12 +75,12 @@ const Post = ({ post, postedBy }) => {
 							navigate(`/${user.username}`);
 						}}
 					/>
-					<Box w='1px' h={"full"} bg='gray.light' my={2} mb={6}></Box>
+					<Box w='1px' h={"full"} bg='gray.light' my={2} mb={4}></Box>
 					<Box position={"relative"} w={"full"}    >
 					
-						{post.replies.length === 0 && <Text textAlign={"center"}> <Image src={emoji} alt="emoji" w={5} h={5} ml={3} mt={-4} mb={2} />   </Text>}
+						{post.replies.length === 0 && <Text textAlign={"center"}> <Image src={emoji} alt="emoji" w={5} h={5} ml={3} mb={-2}   />   </Text>}
 						
-						<Flex >
+						<Flex mt={4} >
 						{post.replies[0] && (
 
 							<Avatar
@@ -88,7 +88,7 @@ const Post = ({ post, postedBy }) => {
 								name='John doe'
 								src={post.replies[0].userProfilePic}
 								position={"absolute"}
-								top={"-20px"}
+								top={"0px"}
 								left='15px'
 								padding={"2px"}
 							/>
@@ -96,24 +96,24 @@ const Post = ({ post, postedBy }) => {
 
 						{post.replies[1] && (
 							<Avatar
-								size='xs'
+								size='2xs'
 								name='John doe'
 								src={post.replies[1].userProfilePic}
 								position={"absolute"}
-								bottom={"20px"}
-								right='-4px'
+								bottom={"15px"}
+								right='8px'
 								padding={"2px"}
 							/>
 						)}
 
 						{post.replies[2] && (
 							<Avatar
-								size='2xs'
+								size='xs'
 								name='John doe'
 								src={post.replies[2].userProfilePic}
 								position={"absolute"}
-								bottom={"20px"}
-								left='4px'
+								bottom={"15px"}
+								left='-1px'
 								padding={"2px"}
 								
 							/>
