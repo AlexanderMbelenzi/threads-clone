@@ -110,8 +110,8 @@ const Actions = ({ post }) => {
 			<Flex gap={3} my={2} onClick={(e) => e.preventDefault()}>
 				<svg
 					aria-label='Like'
-					color={liked ? "rgb(237, 73, 86)" : ""}
-					fill={liked ? "rgb(237, 73, 86)" : "transparent"}
+					color={liked ? "#FF007F" : ""}
+					fill={liked ? "#FF007F" : "transparent"}
 					height='19'
 					role='img'
 					viewBox='0 0 24 22'
