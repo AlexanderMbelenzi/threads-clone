@@ -137,7 +137,7 @@ const Post = ({ post, postedBy }) => {
 						</Flex>
 					</Flex>
 
-					<Text fontSize={"sm"}>{post.text}</Text>
+					<Text fontSize={"xs"}>{post.text}</Text>
 					{post.img && (
 						<Box borderRadius={6} overflow={"hidden"} border={"1px solid"} borderColor={"gray.light"}>
 							<Image src={post.img} w={"full"} />
