@@ -64,7 +64,7 @@ const Post = ({ post, postedBy }) => {
 <Box>
 
 		<Link to={`/${user.username}/post/${post._id}`}>
-			<Flex gap={3} mb={0.5} py={5}>
+			<Flex gap={3}  >
 				<Flex flexDirection={"column"} alignItems={"center"}>
 					<Avatar
 						size='md'
@@ -75,16 +75,20 @@ const Post = ({ post, postedBy }) => {
 							navigate(`/${user.username}`);
 						}}
 					/>
-					<Box w='1px' h={"full"} bg='gray.light' my={2}></Box>
-					<Box position={"relative"} w={"full"}>
-						{post.replies.length === 0 && <Text textAlign={"center"}> <Image src={emoji} alt="emoji" w={5} h={5} ml={3} />   </Text>}
+					<Box w='1px' h={"full"} bg='gray.light' my={2} mb={6}></Box>
+					<Box position={"relative"} w={"full"}    >
+					
+						{post.replies.length === 0 && <Text textAlign={"center"}> <Image src={emoji} alt="emoji" w={5} h={5} ml={3} mt={-4} mb={2} />   </Text>}
+						
+						<Flex >
 						{post.replies[0] && (
+
 							<Avatar
 								size='xs'
 								name='John doe'
 								src={post.replies[0].userProfilePic}
 								position={"absolute"}
-								top={"0px"}
+								top={"-20px"}
 								left='15px'
 								padding={"2px"}
 							/>
@@ -96,26 +100,32 @@ const Post = ({ post, postedBy }) => {
 								name='John doe'
 								src={post.replies[1].userProfilePic}
 								position={"absolute"}
-								bottom={"0px"}
-								right='-5px'
+								bottom={"20px"}
+								right='-4px'
 								padding={"2px"}
 							/>
 						)}
 
 						{post.replies[2] && (
 							<Avatar
-								size='xs'
+								size='2xs'
 								name='John doe'
 								src={post.replies[2].userProfilePic}
 								position={"absolute"}
-								bottom={"0px"}
+								bottom={"20px"}
 								left='4px'
 								padding={"2px"}
+								
 							/>
 						)}
+						</Flex>
 					</Box>
 				</Flex>
+
+
+				
 				<Flex flex={1} flexDirection={"column"} gap={2}>
+
 					<Flex justifyContent={"space-between"} w={"full"}>
 						<Flex w={"full"} alignItems={"center"}>
 							<Text
@@ -146,13 +156,20 @@ const Post = ({ post, postedBy }) => {
 						</Box>
 					)}
 
+
+
 					<Flex gap={3} my={1}>
 						<Actions post={post} />
+
 					</Flex>
+
 				</Flex>
+				
 			</Flex>
+			<Box w="full" h="1px" bg="gray.light" my={3}></Box>
+
 		</Link>
-		<Box w="full" h="1px" bg="gray.light" ></Box>
+		
 		</Box>
 	);
 };
