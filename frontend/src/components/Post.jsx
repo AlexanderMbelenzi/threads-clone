@@ -166,7 +166,7 @@ const Post = ({ post, postedBy }) => {
 				</Flex>
 				
 			</Flex>
-			<Box w="full" h="1px" bg="gray.light" mb={3}></Box>
+			<Box w="full" h="1px" bg="gray.light" mt={3}></Box>
 
 		</Link>
 		

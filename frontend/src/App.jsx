@@ -4,7 +4,7 @@ import UserPage from "./pages/UserPage";
 import PostPage from "./pages/PostPage";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
-
+import SideBar from "./components/SideBar";
 import AuthPage from "./pages/AuthPage";
 import { useRecoilValue } from "recoil";
 import userAtom from "./atoms/userAtom";

@@ -1,11 +1,18 @@
-import { Box, Flex, Link, Skeleton, SkeletonCircle, Text, Button, Input,  InputGroup, InputLeftElement  } from "@chakra-ui/react";
+import { Box, Flex, Link, Text, Button, Input, InputGroup, InputLeftElement, useColorMode ,  Skeleton, SkeletonCircle,   } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import SuggestedUser from "./SuggestedUser";
 import useShowToast from "../hooks/useShowToast";
 
 import { Link as RouterLink } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
+
+
+
+
+
 const SuggestedUsers = () => {
+    const { colorMode } = useColorMode(); // Hook to access color mode
+
 	const [loading, setLoading] = useState(true);
 	const [suggestedUsers, setSuggestedUsers] = useState([]);
 	const showToast = useShowToast();
@@ -40,38 +47,32 @@ const SuggestedUsers = () => {
 					
 		<>
 		<Flex alignItems="center" gap={2}>
-  <InputGroup size="sm">
-    <InputLeftElement pointerEvents="none">
-      <SearchIcon  />
-    </InputLeftElement>
-    <Input
-      as={RouterLink}
-      to="/chat"
-      placeholder="Search for a user"
-      borderRadius="full"
-      bg="#2B2B2B"
-      
-    />
-  </InputGroup>
-</Flex>
+                <InputGroup size="sm">
+                    <InputLeftElement pointerEvents="none">
+					<SearchIcon  />
+                    </InputLeftElement>
+                    <Input
+                        placeholder="Search for a user"
+                        borderRadius="full"
+                        bg={colorMode === "light" ? "#F0F0F0" : "#2B2B2B"} // Dynamically set background color based on color mode
+                    />
+                </InputGroup>
+            </Flex>
+     
+ 
 
 
 
-			<Text mb={4} mt={4}   padding={4}  backgroundColor={"#2B2B2B"} rounded={"xl"} fontWeight={"bold"}>
-				<p  >
-                 
-			Subscribe to Premium
-				</p>
-				<Text mt={2} mb={2}   fontWeight={"normal"}  >
-				Subscribe to unlock new features and if eligible, receive a share of ads revenue.
-				</Text>
-				<button   style={{ backgroundColor: "#1DA1F2", borderRadius: "20px", fontSize: "sm", padding: "0.5rem 1rem", color: "white" }}>Subscribe</button>
-				
-				
-        </Text  >
+			<Text mb={4} mt={4} padding={4} backgroundColor={colorMode === "light" ? "#F0F0F0" : "#2B2B2B"} rounded={"xl"} fontWeight={"bold"}>
+                <p>Subscribe to Premium</p>
+                <Text mt={2} mb={2} fontWeight={"normal"}>
+                    Subscribe to unlock new features and if eligible, receive a share of ads revenue.
+                </Text>
+                <Button style={{ backgroundColor: "#1DA1F2", borderRadius: "20px", fontSize: "sm", padding: "0.5rem 1rem", color: "white" }}>Subscribe</Button>
+            </Text>
 
 		
-			<Flex direction={"column"}  backgroundColor={"#2B2B2B"} rounded={"xl"}  mb={4} padding={4}  gap={4}>
+			<Flex direction={"column"}  backgroundColor={colorMode === "light" ? "#F0F0F0" : "#2B2B2B"} rounded={"xl"}  mb={4} padding={4}  gap={4}>
 			<Text mb={4}  fontWeight={"bold"}>
 			Suggested users
       
@@ -106,6 +107,16 @@ const SuggestedUsers = () => {
 };
 
 export default SuggestedUsers;
+
+
+
+
+
+
+
+
+       
+
 
 // Loading skeletons for suggested users, if u want to copy and paste as shown in the tutorial
 
