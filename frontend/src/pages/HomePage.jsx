@@ -43,7 +43,7 @@ const HomePage = () => {
   return (
     <Flex gap="10" mt={10} alignItems="flex-start">
       <Box
-        flex={40}
+        flex={20}
         display={{
           base: "none",
           md: "block",
@@ -52,7 +52,7 @@ const HomePage = () => {
         <SideBar /> {/* Corrected the component name */}
       </Box>
 
-      <Box flex={55}>
+      <Box flex={60}>
         {!loading && posts.length === 0 && (
           <h1>Welcome to bidoi, share your ideas</h1>
         )}

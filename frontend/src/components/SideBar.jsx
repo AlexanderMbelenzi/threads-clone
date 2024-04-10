@@ -58,7 +58,18 @@ const SideBar = () => {
               Log Out
             </Button>
             <Flex justifyContent="center">
-            <Button style={{ backgroundColor: "#1DA1F2", borderRadius: "20px", fontSize: "sm", padding: "0.5rem 1rem", color: "white" }}>Post</Button>
+              <Button
+                style={{
+                  backgroundColor: "#1DA1F2",
+                  borderRadius: "20px",
+                  fontSize: "xl",
+                  width: "200px",
+                  padding: "0.5rem 1rem",
+                  color: "white"
+                }}
+              >
+                Post
+              </Button>
             </Flex>
           </Stack>
         </Box>
