@@ -61,10 +61,10 @@ const Post = ({ post, postedBy }) => {
 
 	if (!user) return null;
 	return (
-<Box mt={-2}>
+<Box >
 
 		<Link to={`/${user.username}/post/${post._id}`}>
-			<Flex gap={3} paddingTop={3}  >
+			<Flex gap={3} paddingTop={2}  >
 				<Flex flexDirection={"column"} alignItems={"center"}>
 					<Avatar
 						size='md'
@@ -166,7 +166,7 @@ const Post = ({ post, postedBy }) => {
 				</Flex>
 				
 			</Flex>
-			<Box w="full" h="1px" bg="gray.light" mt={3}></Box>
+			<Box w="full" h="1px" bg="gray.light" mt={4}></Box>
 
 		</Link>
 		
