@@ -43,7 +43,7 @@ const Header = () => {
         }}
       >
     			
-				<Flex alignItems="center"  gap={6} >
+				<Flex alignItems="center" position={"fixed"} gap={6} >
                 <InputGroup size="sm" >
                     <InputLeftElement pointerEvents="none">
 					<SearchIcon  />

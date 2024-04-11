@@ -18,7 +18,7 @@ const HeaderIn = () => {
     <Box
       flex={60}
       top="0"
-      px={24}
+      pl={24}
       py={4}
       bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
       zIndex="999"
@@ -49,11 +49,11 @@ const HeaderIn = () => {
           w={6}
           src={colorMode === "dark" ? "/light-logo.svg" : "/dark-logo.svg"}
           onClick={toggleColorMode}
-          ml={32} // Add margin to the logo to increase space
+          pl={2} // Add margin to the logo to increase space
         />
 
 
-            <Link as={RouterLink} to="/home2"           pl={32} // Add margin to the logo to increase space
+            <Link as={RouterLink} to="/home2"           pl={2} // Add margin to the logo to increase space
   >
               following
             </Link>
