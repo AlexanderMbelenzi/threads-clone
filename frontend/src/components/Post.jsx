@@ -3,6 +3,7 @@ import { Image } from "@chakra-ui/image";
 import { Box, Flex, Text } from "@chakra-ui/layout";
 import { Link, useNavigate } from "react-router-dom";
 import Actions from "./Actions";
+import {  useColorMode ,    } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import useShowToast from "../hooks/useShowToast";
 import { formatDistanceToNow } from "date-fns";
@@ -14,6 +15,9 @@ import emoji from "/public/emoji.png"; // Import your PNG image
 
 
 const Post = ({ post, postedBy }) => {
+
+	const { colorMode } = useColorMode(); // Hook to access color mode
+
 	const [user, setUser] = useState(null);
 	const showToast = useShowToast();
 	const currentUser = useRecoilValue(userAtom);
@@ -64,7 +68,7 @@ const Post = ({ post, postedBy }) => {
 <Box >
 
 		<Link to={`/${user.username}/post/${post._id}`}>
-			<Flex gap={3} paddingTop={2}  >
+			<Flex gap={3} paddingTop={3}  >
 				<Flex flexDirection={"column"} alignItems={"center"}>
 					<Avatar
 						size='md'
@@ -75,7 +79,7 @@ const Post = ({ post, postedBy }) => {
 							navigate(`/${user.username}`);
 						}}
 					/>
-					<Box w='1px' h={"full"} bg='gray.light' my={2} mb={4}></Box>
+					<Box w='1px' h={"full"} bg={colorMode === "light" ? "gray.300" : "#2B2B2B"}  my={2} mb={4}></Box>
 					<Box position={"relative"} w={"full"}    >
 					
 						{post.replies.length === 0 && <Text textAlign={"center"}> <Image src={emoji} alt="emoji" w={5} h={5} ml={3} mb={-2}   />   </Text>}
@@ -133,25 +137,42 @@ const Post = ({ post, postedBy }) => {
 								fontWeight={"bold"}
 								onClick={(e) => {
 									e.preventDefault();
+									navigate(`/${user.name}`);
+								}}
+							>
+								{user?.name}
+							</Text>
+							<Image src='/verified.png' w={4} h={4} ml={1}   />
+							<Text
+							  
+							    color={"gray.light"}
+								fontSize={"xs"}
+								fontWeight={"normal"}
+								onClick={(e) => {
+									e.preventDefault();
 									navigate(`/${user.username}`);
 								}}
 							>
-								{user?.username}
+								@{user?.username}
+							</Text> 
+							<Box w={0.5} h={0.5} mx={1} borderRadius={"full"} bg={"gray.light"}></Box>
+
+							<Text fontSize={"xs"} textAlign={"left"}  color={"gray.light"}>
+								 {formatDistanceToNow(new Date(post.createdAt))} 
 							</Text>
-							<Image src='/verified.png' w={4} h={4} ml={1} />
 						</Flex>
-						<Flex gap={4} alignItems={"center"}>
-							<Text fontSize={"xs"} width={36} textAlign={"right"} color={"gray.light"}>
-								{formatDistanceToNow(new Date(post.createdAt))} ago
+						<Flex gap={4} alignItems={"center"} >
+							<Text fontSize={"sm"}  textAlign={"right"} color={"gray.light"}>
+								...
 							</Text>
 
 							{currentUser?._id === user._id && <DeleteIcon size={20} onClick={handleDeletePost} />}
 						</Flex>
 					</Flex>
 
-					<Text fontSize={"xs"}>{post.text}</Text>
+					<Text mt={-2} fontSize={"sm"}>{post.text}</Text>
 					{post.img && (
-						<Box borderRadius={6} overflow={"hidden"} border={"1px solid"} borderColor={"gray.light"}>
+						<Box borderRadius={6} overflow={"hidden"} border={"1px solid"} borderColor={colorMode === "light" ? "gray.400" : "#2B2B2B"}   >
 							<Image src={post.img} w={"full"} />
 						</Box>
 					)}
@@ -166,7 +187,7 @@ const Post = ({ post, postedBy }) => {
 				</Flex>
 				
 			</Flex>
-			<Box w="full" h="1px" bg="gray.light" mt={4}></Box>
+			<Box w="full" h="1px" bg={colorMode === "light" ? "gray.300" : "#2B2B2B"}  mt={4}></Box>
 
 		</Link>
 		

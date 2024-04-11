@@ -10,6 +10,7 @@ import Post from "../components/Post";
 import SideBar from "../components/SideBar";
 import postsAtom from "../atoms/postsAtom";
 import userAtom from "../atoms/userAtom";
+import Header from "../components/Header";
 
 import SuggestedUsers from "../components/SuggestedUsers";
 const HomePage = () => {
@@ -51,8 +52,9 @@ const HomePage = () => {
       >
         <SideBar /> {/* Corrected the component name */}
       </Box>
-
       <Box flex={60}>
+
+
         {!loading && posts.length === 0 && (
           <h1>Welcome to bidoi, share your ideas</h1>
         )}
