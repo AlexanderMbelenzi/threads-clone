@@ -1,6 +1,7 @@
 import { Box, Button, Flex,InputLeftElement, Input,InputGroup, Image, Link, useColorMode } from "@chakra-ui/react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import userAtom from "../atoms/userAtom";
+import HeaderIn from "./HeaderIn";
 import { AiFillHome } from "react-icons/ai";
 import { Link as RouterLink } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
@@ -26,97 +27,14 @@ const Header = () => {
 		</Box>
 
 		<Box
-		  flex={20}
+		  flex={60}>
+      <HeaderIn/>
 		
-		>
-
-		<Box 
-
-            position="fixed"
-            top="0"
-            left="0"
-            right="0"
-            px={8}
-            py={4}
-            bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
-            zIndex="999"
-            mx="auto"
-            width="50%"
-            
-        >
-            <Flex justifyContent={"space-between"}>
-                {!user && (
-                    <Link as={RouterLink} to={"/auth"} onClick={() => setAuthScreen("login")}>
-                        Login
-                    </Link>
-                )}
-				  {user && (
-                    <Flex alignItems={"center"} gap={4}>
-                        <Link as={RouterLink} to={`/`}>
-                            
-                        </Link>
-                    </Flex>
-                )}
-
-                  {user && (
-                    <Flex alignItems={"center"} gap={4}>
-                        <Link as={RouterLink} to={`/`}>
-                            
-                        </Link>
-                    </Flex>
-                )}  
-
-                {user && (
-                    <Flex alignItems={"center"} gap={4}>
-                        <Link as={RouterLink} to={`/`}>
-                            for you
-                        </Link>
-                    </Flex>
-                )}
-
-                <Image
-                    cursor={"pointer"}
-                    alt="logo"
-                    w={6}
-                    src={colorMode === "dark" ? "/light-logo.svg" : "/dark-logo.svg"}
-                    onClick={toggleColorMode}
-                />
-
-                {user && (
-                    <Flex alignItems={"center"} gap={4}>
-                        <Link as={RouterLink} to={`/home2`}>
-                            following
-                        </Link>
-                    </Flex>
-                )}
-
-			
-                {user && (
-                    <Flex alignItems={"center"} gap={4}>
-                        <Link as={RouterLink} to={`/home2`}>
-                            
-                        </Link>
-                    </Flex>
-                )}
-  
-
-                   {user && (
-                    <Flex alignItems={"center"} gap={8}>
-                        <Link as={RouterLink} to={`/home2`}>
-                            
-                        </Link>
-                    </Flex>
-                )}
-
-                {!user && (
-                    <Link as={RouterLink} to={"/auth"} onClick={() => setAuthScreen("signup")}>
-                        Sign up
-                    </Link>
-                )}
-            </Flex>
-
-			</Box>
         </Box>
+
+
+
+
 		<Box
         flex={35}
         display={{
@@ -125,7 +43,18 @@ const Header = () => {
         }}
       >
     			
-
+				<Flex alignItems="center"  gap={6} >
+                <InputGroup size="sm" >
+                    <InputLeftElement pointerEvents="none">
+					<SearchIcon  />
+                    </InputLeftElement>
+                    <Input
+                        placeholder="Search twiter for a user"
+                        borderRadius="full"
+                        bg={colorMode === "light" ? "#F0F0F0" : "#2B2B2B"} // Dynamically set background color based on color mode
+                    />
+                </InputGroup>
+            </Flex>
       </Box>
 
 		</Flex>

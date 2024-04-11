@@ -40,27 +40,16 @@ const SuggestedUsers = () => {
 
 	return (
 
-		<Box pr={80}  position="fixed"    pl={3}  marginTop="10px">
+		<Box pr={80}  position="fixed"    pl={3}  marginTop="-20px">
 
  
                  
 					
 		<>
-		<Flex alignItems="center" gap={2}>
-                <InputGroup size="sm">
-                    <InputLeftElement pointerEvents="none">
-					<SearchIcon  />
-                    </InputLeftElement>
-                    <Input
-                        placeholder="Search for a user"
-                        borderRadius="full"
-                        bg={colorMode === "light" ? "#F0F0F0" : "#2B2B2B"} // Dynamically set background color based on color mode
-                    />
-                </InputGroup>
-            </Flex>
+	
+		
      
- 
-
+			
 
 
 			<Text mb={4} mt={4} padding={4} backgroundColor={colorMode === "light" ? "#F0F0F0" : "#2B2B2B"} rounded={"xl"} fontWeight={"bold"}>
