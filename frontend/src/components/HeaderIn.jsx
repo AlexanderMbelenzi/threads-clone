@@ -18,7 +18,7 @@ const HeaderIn = () => {
     <Box
       flex={60}
       top="0"
-      ml="20%"
+      
       justifyContent="space-between"
       py={4}
       bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
@@ -39,7 +39,7 @@ const HeaderIn = () => {
         )}
 
         {user && (
-          <Flex alignItems="center" justifyContent="space-between"  gap={4}>
+          <Flex alignItems="center" justifyContent="space-between" mr="-20%"    gap={4}>
             <Link as={RouterLink} to="/">
               For you
             </Link>
@@ -56,7 +56,7 @@ const HeaderIn = () => {
         />
 
 
-            <Link as={RouterLink} to="/home2"  justifyContent="space-between"                    mr="-50%"       // Add margin to the logo to increase space
+            <Link as={RouterLink} to="/home2"  justifyContent="space-between"                   mr="-20%"       // Add margin to the logo to increase space
   > 
               Following
             </Link>
