@@ -18,7 +18,7 @@ const HeaderIn = () => {
     <Box
       flex={60}
       top="0"
-      pl={24}
+      pl={20}
       py={4}
       bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
       zIndex="999"
