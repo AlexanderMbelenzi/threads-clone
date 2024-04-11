@@ -45,7 +45,7 @@ const HeaderIn = () => {
             </Link>
 
             <Image
-         ml="5%"
+         ml="50%"
          justifyContent="space-between"
           cursor="pointer"
           alt="logo"
