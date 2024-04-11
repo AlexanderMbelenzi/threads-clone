@@ -45,18 +45,18 @@ const HeaderIn = () => {
             </Link>
 
             <Image
-           ml={10}
-            justifyContent="space-between"
+         ml="15%"
+         justifyContent="space-between"
           cursor="pointer"
           alt="logo"
           w={6}
           src={colorMode === "dark" ? "/light-logo.svg" : "/dark-logo.svg"}
           onClick={toggleColorMode}
-          // Add margin to the logo to increase space
+          
         />
 
 
-            <Link as={RouterLink} to="/home2"  justifyContent="space-between"  ml={10}        // Add margin to the logo to increase space
+            <Link as={RouterLink} to="/home2"  justifyContent="space-between"     ml="15%"       // Add margin to the logo to increase space
   > 
               Following
             </Link>
