@@ -45,7 +45,7 @@ const HeaderIn = () => {
             </Link>
 
             <Image
-         ml="25%"
+         ml="5%"
          justifyContent="space-between"
           cursor="pointer"
           alt="logo"
@@ -56,7 +56,7 @@ const HeaderIn = () => {
         />
 
 
-            <Link as={RouterLink} to="/home2"  justifyContent="space-between"     ml="25%"       // Add margin to the logo to increase space
+            <Link as={RouterLink} to="/home2"  justifyContent="space-between"     mr="-100%"       // Add margin to the logo to increase space
   > 
               Following
             </Link>
