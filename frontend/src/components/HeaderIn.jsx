@@ -56,7 +56,7 @@ const HeaderIn = () => {
         />
 
 
-            <Link as={RouterLink} to="/home2"  justifyContent="space-between"     mr="-100%"       // Add margin to the logo to increase space
+            <Link as={RouterLink} to="/home2"  justifyContent="space-between"     mr="-10%"       // Add margin to the logo to increase space
   > 
               Following
             </Link>
