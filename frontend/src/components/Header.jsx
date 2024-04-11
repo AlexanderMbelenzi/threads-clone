@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
 
-		<Flex gap="10" mt={10} alignItems="flex-start">
+		<Flex gap="10"  alignItems="flex-start">
 		<Box
 		  flex={20}
 		  display={{
@@ -42,19 +42,7 @@ const Header = () => {
           md: "block",
         }}
       >
-    			
-				<Flex alignItems="center" position={"fixed"} gap={6} >
-                <InputGroup size="sm" >
-                    <InputLeftElement pointerEvents="none">
-					<SearchIcon  />
-                    </InputLeftElement>
-                    <Input
-                        placeholder="Search twiter for a user"
-                        borderRadius="full"
-                        bg={colorMode === "light" ? "#F0F0F0" : "#2B2B2B"} // Dynamically set background color based on color mode
-                    />
-                </InputGroup>
-            </Flex>
+    		
       </Box>
 
 		</Flex>

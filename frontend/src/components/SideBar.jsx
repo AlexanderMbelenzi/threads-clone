@@ -12,19 +12,21 @@ import { FiLogOut } from "react-icons/fi";
 import { BsFillChatQuoteFill } from "react-icons/bs";
 import { MdOutlineSettings } from "react-icons/md";
 import { RxAvatar } from "react-icons/rx";
+import { Image } from "@chakra-ui/react";
 import { AiFillHome } from "react-icons/ai";
 import useLogout from "../hooks/useLogout";
 import userAtom from "../atoms/userAtom";
-
+import Logo from "/public/emoji.png"; // Import your PNG image
 const SideBar = () => {
   const user = useRecoilValue(userAtom);
   const logout = useLogout();
 
   return (
     <Box position="fixed">
-      <Flex direction="column" mt={10} alignItems="flex-start">
+      <Flex direction="column" marginTop="-90px" alignItems="flex-start">
         <Box height="full" flex={20} position="fixed" display={{ base: "none", md: "block" }}>
           <Stack spacing={8} mb={2}>
+          <Image src={Logo} alt="Logo" boxSize="50px" />
             <Link as={RouterLink} to='/'>
               <Button size="md" leftIcon={<AiFillHome size={24} />}>
                 Home

@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, Flex, Image, Link, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, Image, Link, InputLeftElement, Input, InputGroup,  useColorMode } from "@chakra-ui/react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import userAtom from "../atoms/userAtom";
 import authScreenAtom from "../atoms/authAtom";
 import { Link as RouterLink } from "react-router-dom";
-
+import { SearchIcon } from "@chakra-ui/icons";
 
 
 
@@ -18,14 +18,13 @@ const HeaderIn = () => {
     <Box
       flex={60}
       top="0"
-      
-      pl="10%"
+      ml="20%"
       justifyContent="space-between"
       py={4}
       bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
       zIndex="999"
-      width="100%"
-      position="fixed"
+     
+     
     >
       <Flex justifyContent="space-between">
         {!user && (
@@ -46,7 +45,7 @@ const HeaderIn = () => {
             </Link>
 
             <Image
-            ml={12}
+           ml={12}
             justifyContent="space-between"
           cursor="pointer"
           alt="logo"
@@ -57,15 +56,25 @@ const HeaderIn = () => {
         />
 
 
-            <Link as={RouterLink} to="/home2" ml={12}  justifyContent="space-between"         // Add margin to the logo to increase space
+            <Link as={RouterLink} to="/home2"  justifyContent="space-between"  ml={12}        // Add margin to the logo to increase space
   > 
               following
             </Link>
+
           </Flex>
         )}
 
        
+
+
+
       </Flex>
+
+
+	
+  
+
+
     </Box>
   );
 };
