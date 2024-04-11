@@ -7,6 +7,7 @@ import {
   Flex,
   Stack,
   Button,
+  useColorMode 
 } from "@chakra-ui/react";
 import { FiLogOut } from "react-icons/fi";
 import { BsFillChatQuoteFill } from "react-icons/bs";
@@ -18,6 +19,7 @@ import useLogout from "../hooks/useLogout";
 import userAtom from "../atoms/userAtom";
 import Logo from "/public/emoji.png"; // Import your PNG image
 const SideBar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   const user = useRecoilValue(userAtom);
   const logout = useLogout();
 
@@ -28,45 +30,48 @@ const SideBar = () => {
           <Stack spacing={8} mb={2}>
 
 
-          <Image src={Logo} alt="Logo" boxSize="50px" ml={2} />
+          <Image src={Logo} alt="Logo" boxSize="50px" ml={4} />
             <Link as={RouterLink} to='/'>
-              <Button size="md" leftIcon={<AiFillHome size={24} />}>
+              <Button size="lg"  bg={colorMode === "dark" ? "black" : "white"}   leftIcon={<AiFillHome size={25} />}>
                 Home
               </Button>
             </Link>
             <Link as={RouterLink} to="/update">
-              <Button size="md">Explore</Button>
+              <Button size="lg"  bg={colorMode === "dark" ? "black" : "white"} leftIcon={<BsFillChatQuoteFill size={25} />}>Explore</Button>
             </Link>
             <Link as={RouterLink} to="/update">
-              <Button size="md">Notifications</Button>
+              <Button size="lg"  bg={colorMode === "dark" ? "black" : "white"} leftIcon={<BsFillChatQuoteFill size={25} />}>Notifications</Button>
             </Link>
             <Link as={RouterLink} to={`/chat`}>
-              <Button size="md" leftIcon={<BsFillChatQuoteFill size={20} />}>
+              <Button size="lg" bg={colorMode === "dark" ? "black" : "white"}  leftIcon={<BsFillChatQuoteFill size={25} />}>
                 Messages
               </Button>
             </Link>
             <Link as={RouterLink} to={`/${user.username}`}>
-              <Button size="md" leftIcon={<RxAvatar size={20} />}>
+              <Button size="lg" bg={colorMode === "dark" ? "black" : "white"}   leftIcon={<RxAvatar size={25} />}>
                 Profile
               </Button>
             </Link>
             <Link as={RouterLink} to={`/settings`}>
-              <Button size="md" leftIcon={<MdOutlineSettings size={20} />}>
+              <Button size="lg"bg={colorMode === "dark" ? "black" : "white"}   leftIcon={<MdOutlineSettings size={25} />}>
                 Settings
               </Button>
             </Link>
             <Link as={RouterLink} to="/update">
-              <Button size="md">More</Button>
+              <Button size="lg"  bg={colorMode === "dark" ? "black" : "white"} leftIcon={<MdOutlineSettings size={25} />}>  More</Button>
             </Link>
-            <Button size="md" onClick={logout} leftIcon={<FiLogOut size={20} />}>
+            <Link >
+            <Button size="lg" onClick={logout} bg={colorMode === "dark" ? "black" : "white"}  leftIcon={<FiLogOut size={25} />}>
               Log Out
             </Button>
+            </Link> 
+
             <Flex justifyContent="center">
               <Button
                 style={{
                   backgroundColor: "#1DA1F2",
                   borderRadius: "20px",
-                  fontSize: "xl",
+                  fontSize: "lg",
                   width: "200px",
                   padding: "0.5rem 1rem",
                   color: "white"
