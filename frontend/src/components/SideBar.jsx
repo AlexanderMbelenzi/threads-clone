@@ -26,7 +26,9 @@ const SideBar = () => {
       <Flex direction="column" marginTop="-90px" alignItems="flex-start">
         <Box height="full" flex={20} position="fixed" display={{ base: "none", md: "block" }}>
           <Stack spacing={8} mb={2}>
-          <Image src={Logo} alt="Logo" boxSize="50px" />
+
+
+          <Image src={Logo} alt="Logo" boxSize="50px" ml={2} />
             <Link as={RouterLink} to='/'>
               <Button size="md" leftIcon={<AiFillHome size={24} />}>
                 Home
