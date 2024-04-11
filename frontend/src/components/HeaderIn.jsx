@@ -45,7 +45,7 @@ const HeaderIn = () => {
             </Link>
 
             <Image
-        mx="10"
+        mx="6"
          justifyContent="space-between"
           cursor="pointer"
           alt="logo"
