@@ -39,7 +39,7 @@ const HeaderIn = () => {
         )}
 
         {user && (
-          <Flex alignItems="center" justifyContent="space-between" mr="-20%"    gap={4}>
+          <Flex alignItems="center" justifyContent="space-between" mr="-30%"    gap={4}>
             <Link as={RouterLink} to="/">
               For you
             </Link>
