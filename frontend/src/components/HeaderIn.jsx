@@ -18,7 +18,8 @@ const HeaderIn = () => {
     <Box
       flex={60}
       top="0"
-      pl={100}
+      
+      pl="10%"
       justifyContent="space-between"
       py={4}
       bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
