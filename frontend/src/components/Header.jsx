@@ -1,8 +1,9 @@
-import { Box, Button, Flex, Image, Link, useColorMode } from "@chakra-ui/react";
+import { Box, Button, Flex,InputLeftElement, Input,InputGroup, Image, Link, useColorMode } from "@chakra-ui/react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { AiFillHome } from "react-icons/ai";
 import { Link as RouterLink } from "react-router-dom";
+import { SearchIcon } from "@chakra-ui/icons";
 
 import authScreenAtom from "../atoms/authAtom";
 
@@ -12,17 +13,36 @@ const Header = () => {
     const setAuthScreen = useSetRecoilState(authScreenAtom);
 
     return (
-        <Box
+
+		<Flex gap="10" mt={10} alignItems="flex-start">
+		<Box
+		  flex={20}
+		  display={{
+			base: "none",
+			md: "block",
+		  }}
+		>
+		 
+		</Box>
+
+		<Box
+		  flex={20}
+		
+		>
+
+		<Box 
+
             position="fixed"
             top="0"
             left="0"
             right="0"
-            px={8} // Adjust the padding as needed
+            px={8}
             py={4}
-            bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"} // Adjust the transparency as needed
-            zIndex="999" // Ensure the header is on top of other content
-            mx="auto" // Center the header horizontally
-            width="100%" // Ensure the header spans the full width
+            bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
+            zIndex="999"
+            mx="auto"
+            width="50%"
+            
         >
             <Flex justifyContent={"space-between"}>
                 {!user && (
@@ -70,17 +90,18 @@ const Header = () => {
                     </Flex>
                 )}
 
-				{user && (
+			
+                {user && (
                     <Flex alignItems={"center"} gap={4}>
                         <Link as={RouterLink} to={`/home2`}>
                             
                         </Link>
                     </Flex>
                 )}
-				
+  
 
-				{user && (
-                    <Flex alignItems={"center"} gap={4}>
+                   {user && (
+                    <Flex alignItems={"center"} gap={8}>
                         <Link as={RouterLink} to={`/home2`}>
                             
                         </Link>
@@ -93,7 +114,21 @@ const Header = () => {
                     </Link>
                 )}
             </Flex>
+
+			</Box>
         </Box>
+		<Box
+        flex={35}
+        display={{
+          base: "none",
+          md: "block",
+        }}
+      >
+    			
+
+      </Box>
+
+		</Flex>
     );
 };
 
