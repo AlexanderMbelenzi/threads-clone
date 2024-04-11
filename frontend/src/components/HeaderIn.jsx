@@ -18,7 +18,7 @@ const HeaderIn = () => {
     <Box
      
       top="0"
-      px="15%"
+      px="10%"
       justifyContent="space-between"
       py={4}
       bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
@@ -45,7 +45,7 @@ const HeaderIn = () => {
             </Link>
 
             <Image
-        mx="6"
+        mx="16"
          justifyContent="space-between"
           cursor="pointer"
           alt="logo"
