@@ -27,10 +27,10 @@ const Header = () => {
 		</Box>
 
 		<Box
-    mb={-9}
+      mb={"-2%"}
 		  flex={58}>
       <HeaderIn/>
-		  <Box w="full" h="1px" bg={colorMode === "light" ? "gray.300" : "#2B2B2B"}   ></Box>
+		
         </Box>
 
 

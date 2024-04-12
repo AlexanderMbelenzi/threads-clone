@@ -12,10 +12,10 @@ const HeaderIn = () => {
     const setAuthScreen = useSetRecoilState(authScreenAtom);
 
     return (
-      
+        <Box> 
         <Box
-
-            px="5%"
+            pl="7%"
+            pr="5%"
             top="0"
             py={4}
             bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
@@ -57,9 +57,10 @@ const HeaderIn = () => {
                     </>
                 )}
             </Flex>
+           
         </Box>
-                
-                   
+        <Box w="full" h="1px" bg={colorMode === "light" ? "gray.300" : "#2B2B2B"}   ></Box>          
+        </Box>             
     );
 };
 

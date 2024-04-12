@@ -19,18 +19,16 @@ function App() {
 	return (
 		<Box position={"relative"} w='full'>
 
-<Container maxW={pathname === "/" || pathname === "/Home2" ? { base: "1300px", md: "1300px" } : "1300px"}>
+<Container maxW={pathname === "/" || pathname === "/Home2" ? { base: "1300px", md: "1300px" } : "620px"}>
 
 <Header />
-<Routes>   
-<Route path='/' element={user ? <HomePage /> : <Navigate to='/auth' />} />
-<Route path='/Home2' element={user ? <HomePage2 /> : <Navigate to='/auth' />} />
- 
+<Routes>                
+
+                    <Route path='/Home2' element={user ? <HomePage2 /> : <Navigate to='/auth' />} />
 
 
-                           
-                   
-                     <Route path='/auth' element={!user ? <AuthPage /> : <Navigate to='/' />} />
+					<Route path='/' element={user ? <HomePage /> : <Navigate to='/auth' />} />
+				    <Route path='/auth' element={!user ? <AuthPage /> : <Navigate to='/' />} />
 					<Route path='/update' element={user ? <UpdateProfilePage /> : <Navigate to='/auth' />} />
 					
 					<Route
@@ -49,13 +47,16 @@ function App() {
 					<Route path='/:username/post/:pid' element={<PostPage />} />
 					<Route path='/chat' element={user ? <ChatPage /> : <Navigate to={"/auth"} />} />
 					<Route path='/settings' element={user ? <SettingsPage /> : <Navigate to={"/auth"} />} />
-					
+				
 				
 					
 				</Routes>
 				</Container>
 
-			
+				
+	
+		
+
 
 
 

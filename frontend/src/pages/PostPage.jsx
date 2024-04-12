@@ -69,10 +69,13 @@ const PostPage = () => {
 	if (!currentPost) return null;
 	console.log("currentPost", currentPost);
 
-	return (
+	return ( 
+	
+		<Box mt={"5%"}> 
 		<>
+		
 			<Flex>
-				<Flex w={"full"} alignItems={"center"} gap={3}>
+				<Flex w={"full"} alignItems={"center"} flex={60} gap={3}>
 					<Avatar src={user.profilePic} size={"md"} name='Mark Zuckerberg' />
 					<Flex>
 						<Text fontSize={"sm"} fontWeight={"bold"}>
@@ -121,8 +124,13 @@ const PostPage = () => {
 					reply={reply}
 					lastReply={reply._id === currentPost.replies[currentPost.replies.length - 1]._id}
 				/>
+
+
 			))}
 		</>
+
+		</Box> 
+		
 	);
 };
 
