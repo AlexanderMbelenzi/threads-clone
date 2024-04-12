@@ -16,7 +16,7 @@ const HeaderIn = () => {
 
   return (
     <Box
-      px="30%"
+      px="20%"
       top="0"
      
       justifyContent="center"
