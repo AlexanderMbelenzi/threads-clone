@@ -13,7 +13,8 @@ const HeaderIn = () => {
 
     return (
         <Box
-            px="10%"
+            pr="8%"
+            pl="15%"
             top="0"
             py={4}
             bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
@@ -35,7 +36,7 @@ const HeaderIn = () => {
 
                 {user && (
                     <>
-                        <Link as={RouterLink} to="/">
+                        <Link fontSize={"lg"} as={RouterLink} to="/">
                             For you
                         </Link>
 
@@ -49,7 +50,7 @@ const HeaderIn = () => {
                             />
                         </Flex>
 
-                        <Link as={RouterLink} to="/home2">
+                        <Link as={RouterLink} fontSize={"lg"}  to="/home2">
                             Following
                         </Link>
                     </>
