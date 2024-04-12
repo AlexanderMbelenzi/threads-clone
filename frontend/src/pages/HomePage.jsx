@@ -44,7 +44,7 @@ const HomePage = () => {
   return (
     <Flex gap="10" mt={10} alignItems="flex-start">
       <Box
-        flex={20}
+        flex={23}
         display={{
           base: "none",
           md: "block",
@@ -52,7 +52,7 @@ const HomePage = () => {
       >
         <SideBar /> {/* Corrected the component name */}
       </Box>
-      <Box flex={60}>
+      <Box flex={58}>
 
 
         {!loading && posts.length === 0 && (

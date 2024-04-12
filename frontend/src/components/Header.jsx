@@ -17,7 +17,7 @@ const Header = () => {
 
 		<Flex gap="10"  alignItems="flex-start">
 		<Box
-		  flex={20}
+		  flex={23}
 		  display={{
 			base: "none",
 			md: "block",
@@ -27,7 +27,7 @@ const Header = () => {
 		</Box>
 
 		<Box
-		  flex={60}>
+		  flex={58}>
       <HeaderIn/>
 		
         </Box>
