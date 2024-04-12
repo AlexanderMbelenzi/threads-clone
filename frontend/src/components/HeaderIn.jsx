@@ -50,7 +50,7 @@ const HeaderIn = () => {
                             />
                         </Flex>
 
-                        <Link as={RouterLink} fontSize={"md"}  to="/home2">
+                        <Link as={RouterLink} fontSize={"md"}  to="/Home2">
                             Following
                         </Link>
                     </>

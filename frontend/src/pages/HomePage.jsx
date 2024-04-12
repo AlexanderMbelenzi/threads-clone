@@ -41,7 +41,8 @@ const HomePage = () => {
     getFeedPosts();
   }, [showToast, setPosts]);
 
-  return (
+
+ return (
     <Flex gap="10" mt={10} alignItems="flex-start">
       <Box
         flex={23}
@@ -84,3 +85,6 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+

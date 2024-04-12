@@ -1,5 +1,7 @@
+
 import { Box, Flex, Spinner } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import SideBar from "../components/SideBar";
 import useShowToast from "../hooks/useShowToast";
 import Post from "../components/Post";
 import { useRecoilState } from "recoil";
@@ -7,6 +9,7 @@ import postsAtom from "../atoms/postsAtom";
 import SuggestedUsers from "../components/SuggestedUsers";
 
 const HomePage2 = () => {
+	
 	const [posts, setPosts] = useRecoilState(postsAtom);
 	const [loading, setLoading] = useState(true);
 	const showToast = useShowToast();
@@ -32,32 +35,51 @@ const HomePage2 = () => {
 		getFeedPosts2();
 	}, [showToast, setPosts]);
 
-	return (
-		<Flex gap='10' alignItems={"flex-start"}>
-			<Box flex={70}>
-				{!loading && posts.length === 0 && <h1>Welcome to bidoi, share your ideas</h1>}
 
-				{loading && (
-					<Flex justify='center'>
-						<Spinner size='xl' />
-					</Flex>
-				)}
+  return (
+	
+    <Flex gap="10" pl={10} mt={10} alignItems="flex-start"  >
+      <Box  
+	         flex={23}
+        display={{
+          base: "none",
+          md: "block",
+        }}
+      >
+        <SideBar /> {/* Corrected the component name */}
+      </Box>
+      <Box flex={58}>
 
-				{posts.map((post) => (
+
+        {!loading && posts.length === 0 && (
+          <h1>Welcome to bidoi, share your ideas</h1>
+        )}
+
+        {loading && (
+          <Flex justify="center">
+            <Spinner size="xl" />
+          </Flex>
+        )}
+
+                {posts.map((post) => (
 					<Post key={post._id} post={post} postedBy={post.postedBy} />
 				))}
-			</Box>
-			<Box
-				flex={30}
-				display={{
-					base: "none",
-					md: "block",
-				}}
-			>
-				<SuggestedUsers />
-			</Box>
-		</Flex>
-	);
+      </Box>
+      <Box
+        flex={35}
+        display={{
+          base: "none",
+          md: "block",
+        }}
+      >
+    				<SuggestedUsers />
+
+      </Box>
+    </Flex>
+  );
 };
 
 export default HomePage2;
+
+				
+	
