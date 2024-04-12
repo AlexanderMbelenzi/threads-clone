@@ -13,7 +13,7 @@ const HeaderIn = () => {
 
     return (
         <Box
-            pl="20%"
+            pl="10%"
             top="0"
             py={4}
             bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"}
