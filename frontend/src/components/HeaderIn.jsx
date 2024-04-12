@@ -36,7 +36,7 @@ const HeaderIn = () => {
 
                 {user && (
                     <>
-                        <Link fontSize={"lg"} as={RouterLink} to="/">
+                        <Link fontSize={"md"} as={RouterLink} to="/">
                             For you
                         </Link>
 
@@ -50,7 +50,7 @@ const HeaderIn = () => {
                             />
                         </Flex>
 
-                        <Link as={RouterLink} fontSize={"lg"}  to="/home2">
+                        <Link as={RouterLink} fontSize={"md"}  to="/home2">
                             Following
                         </Link>
                     </>
