@@ -25,10 +25,10 @@ function App() {
 <Routes>   
 <Route path='/' element={user ? <HomePage /> : <Navigate to='/auth' />} />
 <Route path='/Home2' element={user ? <HomePage2 /> : <Navigate to='/auth' />} />
-</Routes>   
+ 
 
-<Container maxW={pathname === "/" || pathname === "/Home2" ? { base: "1300px", md: "1300px" } : "620px"}>
-                   <Routes>                
+
+                           
                    
                      <Route path='/auth' element={!user ? <AuthPage /> : <Navigate to='/' />} />
 					<Route path='/update' element={user ? <UpdateProfilePage /> : <Navigate to='/auth' />} />
@@ -55,9 +55,7 @@ function App() {
 				</Routes>
 				</Container>
 
-				</Container>
-	
-
+			
 
 
 
