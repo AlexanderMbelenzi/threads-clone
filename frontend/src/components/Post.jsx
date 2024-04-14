@@ -68,10 +68,10 @@ const Post = ({ post, postedBy }) => {
 <Box >
 
 		<Link to={`/${user.username}/post/${post._id}`}>
-			<Flex gap={3} paddingTop={3}  >
+			<Flex gap={3} paddingTop={3} ml={-1} >
 				<Flex flexDirection={"column"} alignItems={"center"}>
 					<Avatar
-						size={{ base: 'sm', md: 'md' } }
+						size='md'
 						name={user.name}
 						src={user?.profilePic}
 						onClick={(e) => {
