@@ -41,10 +41,23 @@
  /* Define sizes for small screens */
 /* Default image size */
 .truncate-text {
-	max-width: 10%;
+	max-width: 30%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+  }
+
+
+  .truncate-text5 {
+	max-width: 30%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+
+
+  .post-content {
+	word-wrap: break-word;
   }
   
   

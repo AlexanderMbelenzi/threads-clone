@@ -65,7 +65,7 @@ const Post = ({ post, postedBy }) => {
 
 	if (!user) return null;
 	return (
-<Box >
+<Box  wordBreak="break-all"    >
 
 		<Link to={`/${user.username}/post/${post._id}`}>
 			<Flex gap={3} paddingTop={3}>
@@ -155,7 +155,7 @@ const Post = ({ post, postedBy }) => {
 									navigate(`/${user.username}`);
 								}}
 							>
-								{user?.username.length > 15 ? `${user.username.slice(0, 10)}...` : `@${user.username}`}
+								{user?.username}
 							</Text> 
 							<Box w={0.5} h={0.5} mx={1} borderRadius={"full"} bg={"gray.light"}></Box>
 

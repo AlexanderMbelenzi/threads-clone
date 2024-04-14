@@ -62,14 +62,16 @@ const HomePage = () => {
 
         {loading && (
           <Flex justify="center">
-            <Spinner size="xl" />
-          </Flex>
-        )}
+          <Spinner size="xl" />
+        </Flex>
+      )}
 
-        {posts.map((post) => (
-          <Post key={post._id} post={post} postedBy={post.postedBy} />
-        ))}
-      </Box>
+              {posts.map((post) => (
+         <Post key={post._id} post={post} postedBy={post.postedBy} />
+      ))}
+    </Box>
+         
+      
       <Box
         flex={35}
         display={{

@@ -31,12 +31,12 @@ const UserHeader = ({ user }) => {
 	return (
 		<VStack gap={4} alignItems={"start"}>
 			<Flex justifyContent={"space-between"} w={"full"}>
-				<Box>
-					<Text fontSize={"2xl"} fontWeight={"bold"}>
+				<Box wordBreak="break-all" maxWidth="80%"   >
+					<Text fontSize={"xl"} className="truncate-text5"  fontWeight={"bold"}>
 						{user.name}
 					</Text>
 					<Flex gap={2} alignItems={"center"}>
-						<Text fontSize={"sm"}>{user.username}</Text>
+						<Text fontSize={"sm"}  className="truncate-text5"   >{user.username}</Text>
 						<Text fontSize={"xs"} bg={"gray.dark"} color={"gray.light"} p={1} borderRadius={"full"}>
 							threads.net
 						</Text>
@@ -66,7 +66,7 @@ const UserHeader = ({ user }) => {
 				</Box>
 			</Flex>
 
-			<Text>{user.bio}</Text>
+			<Text    >{user.bio}</Text>
 
 			{currentUser?._id === user._id && (
 				<Link as={RouterLink} to='/update'>
