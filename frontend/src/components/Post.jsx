@@ -68,7 +68,7 @@ const Post = ({ post, postedBy }) => {
 <Box >
 
 		<Link to={`/${user.username}/post/${post._id}`}>
-			<Flex gap={3} paddingTop={3} ml={-1} >
+			<Flex gap={3} paddingTop={3}>
 				<Flex flexDirection={"column"} alignItems={"center"}>
 					<Avatar
 						size='md'

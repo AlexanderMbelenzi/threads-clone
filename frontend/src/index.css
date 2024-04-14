@@ -41,7 +41,7 @@
  /* Define sizes for small screens */
 /* Default image size */
 .truncate-text {
-	max-width: 40%;
+	max-width: 10%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
