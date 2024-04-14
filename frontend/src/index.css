@@ -40,5 +40,11 @@
   }
  /* Define sizes for small screens */
 /* Default image size */
-
+.truncate-text {
+	max-width: 40%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+  
   

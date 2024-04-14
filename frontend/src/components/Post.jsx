@@ -135,6 +135,7 @@ const Post = ({ post, postedBy }) => {
 							<Text
 								fontSize={"sm"}
 								fontWeight={"bold"}
+								className="truncate-text"
 								onClick={(e) => {
 									e.preventDefault();
 									navigate(`/${user.name}`);
@@ -144,16 +145,17 @@ const Post = ({ post, postedBy }) => {
 							</Text>
 							<Image src='/verified.png' w={4} h={4} ml={1}   />
 							<Text
-							  
+							     className="truncate-text"
 							    color={"gray.light"}
 								fontSize={"xs"}
+					
 								fontWeight={"normal"}
 								onClick={(e) => {
 									e.preventDefault();
 									navigate(`/${user.username}`);
 								}}
 							>
-								@{user?.username}
+								{user?.username.length > 15 ? `${user.username.slice(0, 10)}...` : `@${user.username}`}
 							</Text> 
 							<Box w={0.5} h={0.5} mx={1} borderRadius={"full"} bg={"gray.light"}></Box>
 
