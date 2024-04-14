@@ -95,7 +95,7 @@ const PostPage = () => {
 				</Flex>
 			</Flex>
 
-			<Text my={3}>{currentPost.text}  fontSize={"sm"}  </Text>
+			<Text my={3}    fontSize={{ base: "xs", md: "15.5px" }}>{currentPost.text}   </Text>
 
 			{currentPost.img && (
 				<Box borderRadius={6} overflow={"hidden"} border={"1px solid"} borderColor={"gray.light"}>
