@@ -11,7 +11,7 @@ const Comment = ({ reply, lastReply }) => {
 							{reply.username}
 						</Text>
 					</Flex>
-					<Text>{reply.text}</Text>
+					<Text  fontSize={{ base: "xs", md: "15.5px" }}  >{reply.text}</Text>
 				</Flex>
 			</Flex>
 			{!lastReply ? <Divider /> : null}

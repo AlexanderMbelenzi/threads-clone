@@ -112,10 +112,10 @@ const Actions = ({ post }) => {
 					aria-label='Like'
 					color={liked ? "#FF007F" : ""}
 					fill={liked ? "#FF007F" : "transparent"}
-					height='15'
+					height='20'
 					role='img'
 					viewBox='0 0 24 22'
-					width='15'
+					width='20'
 					onClick={handleLikeAndUnlike}
 				>
 					<path
@@ -129,10 +129,10 @@ const Actions = ({ post }) => {
 					aria-label='Comment'
 					color=''
 					fill=''
-					height='15'
+					height='20'
 					role='img'
 					viewBox='0 0 24 24'
-					width='15'
+					width='20'
 					onClick={onOpen}
 				>
 					<title>Comment</title>
@@ -150,11 +150,11 @@ const Actions = ({ post }) => {
 			</Flex>
 
 			<Flex gap={2} alignItems={"center"}>
-				<Text color={"gray.light"} fontSize='sm'>
+				<Text color={"gray.light"} f fontSize={{ base: "xs", md: "sm" }}>
 					{post.replies.length} replies
 				</Text>
 				<Box w={0.5} h={0.5} borderRadius={"full"} bg={"gray.light"}></Box>
-				<Text color={"gray.light"} fontSize='sm'>
+				<Text color={"gray.light"}  fontSize={{ base: "xs", md: "sm" }}>
 					{post.likes.length} likes
 				</Text>
 			</Flex>
@@ -193,10 +193,10 @@ const RepostSVG = () => {
 			aria-label='Repost'
 			color='currentColor'
 			fill='currentColor'
-			height='15'
+			height='20'
 			role='img'
 			viewBox='0 0 24 24'
-			width='15'
+			width='20'
 		>
 			<title>Repost</title>
 			<path
@@ -213,10 +213,10 @@ const ShareSVG = () => {
 			aria-label='Share'
 			color=''
 			fill='rgb(243, 245, 247)'
-			height='15'
+			height='20'
 			role='img'
 			viewBox='0 0 24 24'
-			width='15'
+			width='20'
 		>
 			<title>Share</title>
 			<line

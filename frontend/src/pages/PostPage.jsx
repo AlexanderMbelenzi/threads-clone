@@ -119,7 +119,7 @@ const PostPage = () => {
 
 			<Divider my={4} />
 			{currentPost.replies.map((reply) => (
-				<Comment   fontSize={{ base: "xs", md: "15.5px" }}
+				<Comment   
 					key={reply._id}
 					reply={reply}
 					lastReply={reply._id === currentPost.replies[currentPost.replies.length - 1]._id}
