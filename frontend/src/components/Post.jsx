@@ -71,7 +71,7 @@ const Post = ({ post, postedBy }) => {
 			<Flex gap={3} paddingTop={3}  >
 				<Flex flexDirection={"column"} alignItems={"center"}>
 					<Avatar
-						size='md'
+						size={{ base: 'sm', md: 'md' } }
 						name={user.name}
 						src={user?.profilePic}
 						onClick={(e) => {
