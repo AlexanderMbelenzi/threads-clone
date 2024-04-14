@@ -112,14 +112,14 @@ const PostPage = () => {
 			<Flex justifyContent={"space-between"}>
 				<Flex gap={2} alignItems={"center"}>
 					<Text fontSize={"2xl"}>  <Image src={wavingemoji} alt="emoji" w={20} h={14} ml={-5} />         </Text>
-					<Text color={"gray.light"}>Get the app to like, reply and post.</Text>
+					<Text  fontSize={{ base: "xs", md: "15.5px" }}  color={"gray.light"}>Get the app to like, reply and post.</Text>
 				</Flex>
-				<Button>Get</Button>
+				<Button  fontSize={{ base: "xs", md: "15.5px" }}   >Get</Button>
 			</Flex>
 
 			<Divider my={4} />
 			{currentPost.replies.map((reply) => (
-				<Comment
+				<Comment   fontSize={{ base: "xs", md: "15.5px" }}
 					key={reply._id}
 					reply={reply}
 					lastReply={reply._id === currentPost.replies[currentPost.replies.length - 1]._id}
