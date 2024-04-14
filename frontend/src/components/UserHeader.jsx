@@ -30,7 +30,8 @@ const UserHeader = ({ user }) => {
 
 	return (
 		<VStack gap={4} alignItems={"start"}>
-			<Flex justifyContent={"space-between"} w={"full"}>
+			
+			<Flex justifyContent={"space-between"} mt={4} w={"full"}>
 				<Box wordBreak="break-all" maxWidth="80%"   >
 					<Text fontSize={"xl"} className="truncate-text5"  fontWeight={"bold"}>
 						{user.name}
@@ -42,7 +43,7 @@ const UserHeader = ({ user }) => {
 						</Text>
 					</Flex>
 				</Box>
-				<Box>
+				<Box mt={2}>
 					{user.profilePic && (
 						<Avatar
 							name={user.name}
