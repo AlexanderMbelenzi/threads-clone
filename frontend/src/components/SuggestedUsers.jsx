@@ -40,7 +40,7 @@ const SuggestedUsers = () => {
 
 	return (
 
-		<Box pr={80}  position="fixed"  ml={4}  pl={4}  marginTop="-50px">
+		<Box mr={"80"}  position="fixed"  ml={4}    marginTop="10px">
 
  
                  
@@ -69,7 +69,7 @@ const SuggestedUsers = () => {
                 <Text mt={2} mb={2} fontWeight={"normal"}>
                     Subscribe to unlock new features and if eligible, receive a share of ads revenue.
                 </Text>
-                <Button style={{ backgroundColor: "#1DA1F2", borderRadius: "20px", fontSize: "sm", padding: "0.5rem 1rem", color: "white" }}>Subscribe</Button>
+                <Button style={{ backgroundColor: "#FF4500 ", borderRadius: "20px", fontSize: "sm", padding: "0.5rem 1rem", color: "white" }}>Subscribe</Button>
             </Text>
 
 		

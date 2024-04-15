@@ -11,10 +11,10 @@ const SuggestedUser = ({ user }) => {
 			<Flex gap={2} as={Link} to={`${user.username}`}>
 				<Avatar src={user.profilePic} />
 				<Box>
-					<Text fontSize={"sm"} className="truncate-text"  fontWeight={"bold"}>
+					<Text fontSize={"sm"}   fontWeight={"bold"}>
 						{user.username}
 					</Text>
-					<Text color={"gray.light"} className="truncate-text"  fontSize={"sm"}>
+					<Text color={"gray.light"}   fontSize={"sm"}>
 						{user.name}
 					</Text>
 				</Box>
@@ -24,7 +24,7 @@ const SuggestedUser = ({ user }) => {
 				size={"sm"}
 				rounded={"20px"}
 				color={following ? "black" : "white"}
-				bg={following ? "white" : "#1DA1F2"}
+				bg={following ? "white" : "#FF4500 "}
 				onClick={handleFollowUnfollow}
 				isLoading={updating}
 				_hover={{

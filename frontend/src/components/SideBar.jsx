@@ -36,13 +36,13 @@ const SideBar = () => {
   const logout = useLogout();
 
   return (
-    <Box position="fixed">
-      <Flex direction="column" marginTop="-60px" alignItems="flex-start">
+    <Box position="fixed"  >
+      <Flex direction="column" marginTop="10px" alignItems="flex-start">
         <Box height="full"  flex={20} position="fixed" display={{ base: "none", md: "block" }}>
           <Stack spacing={2} >
 
 
-          <Image src={Logo} alt="Logo" boxSize="50px" ml={4} />
+         
             <Link as={RouterLink} to='/'>
               <Button size="lg"  bg={colorMode === "dark" ? "black" : "white"} borderRadius="20px"    leftIcon={<BsHouseAddFill size={30}  />}>
                 Home
@@ -96,7 +96,7 @@ const SideBar = () => {
               <Button
                 style={{
                   marginTop: "20%",
-                  backgroundColor: "#1DA1F2",
+                  backgroundColor: "#FF4500 ",
                   borderRadius: "20px",
                   fontSize: "lg",
                   width: "80%",

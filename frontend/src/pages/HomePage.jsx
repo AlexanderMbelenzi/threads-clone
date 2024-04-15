@@ -1,51 +1,46 @@
+
+import { Box, Flex, Spinner } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Flex,
-  Spinner,
-} from "@chakra-ui/react";
-import { useRecoilState, useRecoilValue } from "recoil"; // corrected import statement
+import SideBar from "../components/SideBar";
 import useShowToast from "../hooks/useShowToast";
 import Post from "../components/Post";
-import SideBar from "../components/SideBar";
+import { useRecoilState } from "recoil";
 import postsAtom from "../atoms/postsAtom";
-import userAtom from "../atoms/userAtom";
-import Header from "../components/Header";
-
 import SuggestedUsers from "../components/SuggestedUsers";
+
 const HomePage = () => {
-  const user = useRecoilValue(userAtom);
-  const [posts, setPosts] = useRecoilState(postsAtom);
-  const [loading, setLoading] = useState(true);
-  const showToast = useShowToast();
+	
+	const [posts, setPosts] = useRecoilState(postsAtom);
+	const [loading, setLoading] = useState(true);
+	const showToast = useShowToast();
+	useEffect(() => {
+		const getFeedPosts = async () => {
+			setLoading(true);
+			setPosts([]);
+			try {
+				const res = await fetch("/api/posts/feed");
+				const data = await res.json();
+				if (data.error) {
+					showToast("Error", data.error, "error");
+					return;
+				}
+				console.log(data);
+				setPosts(data);
+			} catch (error) {
+				showToast("Error", error.message, "error");
+			} finally {
+				setLoading(false);
+			}
+		};
+		getFeedPosts();
+	}, [showToast, setPosts]);
 
-  useEffect(() => {
-    const getFeedPosts = async () => {
-      setLoading(true);
-      setPosts([]);
-      try {
-        const res = await fetch("/api/posts/feed");
-        const data = await res.json();
-        if (data.error) {
-          showToast("Error", data.error, "error");
-          return;
-        }
-        console.log(data);
-        setPosts(data);
-      } catch (error) {
-        showToast("Error", error.message, "error");
-      } finally {
-        setLoading(false); // Set loading to false in finally block
-      }
-    };
-    getFeedPosts();
-  }, [showToast, setPosts]);
 
-
- return (
-    <Flex gap="10" mt={10} alignItems="flex-start">
-      <Box
-        flex={23}
+  return (
+	
+    <Flex gap="10"  mt={10} alignItems="flex-start"  >
+      <Box  
+	         flex={23}
         display={{
           base: "none",
           md: "block",
@@ -57,21 +52,19 @@ const HomePage = () => {
 
 
         {!loading && posts.length === 0 && (
-          <h1>Welcome to bid, share your ideas</h1>
+          <h1>Welcome to bidoi, share your ideas</h1>
         )}
 
         {loading && (
           <Flex justify="center">
-          <Spinner size="xl" />
-        </Flex>
-      )}
+            <Spinner size="xl" />
+          </Flex>
+        )}
 
-              {posts.map((post) => (
-         <Post key={post._id} post={post} postedBy={post.postedBy} />
-      ))}
-    </Box>
-         
-      
+                {posts.map((post) => (
+					<Post key={post._id} post={post} postedBy={post.postedBy} />
+				))}
+      </Box>
       <Box
         flex={35}
         display={{
@@ -88,5 +81,5 @@ const HomePage = () => {
 
 export default HomePage;
 
-
-
+				
+	

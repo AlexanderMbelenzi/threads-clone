@@ -32,7 +32,7 @@ const UserHeader = ({ user }) => {
 		<VStack gap={4} alignItems={"start"}>
 			
 			<Flex justifyContent={"space-between"} mt={4} w={"full"}>
-				<Box wordBreak="break-all" maxWidth="80%"   >
+				<Box wordBreak="break-all"   >
 					<Text fontSize={"xl"} className="truncate-text5"  fontWeight={"bold"}>
 						{user.name}
 					</Text>

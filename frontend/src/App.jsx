@@ -2,9 +2,8 @@ import { Box, Container } from "@chakra-ui/react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import UserPage from "./pages/UserPage";
 import PostPage from "./pages/PostPage";
-import Header from "./components/Header";
+import Header from "./components/HeaderIn";
 import HomePage from "./pages/HomePage";
-
 import AuthPage from "./pages/AuthPage";
 import { useRecoilValue } from "recoil";
 import userAtom from "./atoms/userAtom";
@@ -20,7 +19,6 @@ function App() {
 		<Box position={"relative"} w='full'>
 
 <Container maxW={pathname === "/" || pathname === "/Home2" ? { base: "620px", md: "1300px" } : "620px"}>
-
 <Header />
 <Routes>                
 
