@@ -14,11 +14,11 @@ const HomePage = () => {
 	const [loading, setLoading] = useState(true);
 	const showToast = useShowToast();
 	useEffect(() => {
-		const getFeedPosts = async () => {
+		const getFeedPosts2 = async () => {
 			setLoading(true);
 			setPosts([]);
 			try {
-				const res = await fetch("/api/posts/feed");
+				const res = await fetch("/api/posts/feed2");
 				const data = await res.json();
 				if (data.error) {
 					showToast("Error", data.error, "error");
@@ -32,13 +32,13 @@ const HomePage = () => {
 				setLoading(false);
 			}
 		};
-		getFeedPosts();
+		getFeedPosts2();
 	}, [showToast, setPosts]);
 
 
   return (
 	
-    <Flex gap="10"  mt={5} alignItems="flex-start"  >
+    <Flex gap="10"  mt={10} alignItems="flex-start"  >
       <Box  
 	         flex={23}
         display={{
@@ -48,7 +48,7 @@ const HomePage = () => {
       >
         <SideBar /> {/* Corrected the component name */}
       </Box>
-      <Box flex={58}   marginTop="35px" >
+      <Box flex={58}>
 
 
         {!loading && posts.length === 0 && (
