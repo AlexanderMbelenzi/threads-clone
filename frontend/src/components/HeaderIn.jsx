@@ -32,8 +32,11 @@ const Header = () => {
               </>
             ) : (
               <>
+<Box>
+<Image src={Logo2} mt={-25} mb={-25} alt="Logo"cursor="pointer" 
+ className="logo" />
+</Box>
 
-<Image src={Logo2} mt={-10} mb={-10} alt="Logo"cursor="pointer"  w={40}/>
 
 
                 <Link fontSize="md" as={RouterLink} to="/">
@@ -54,7 +57,7 @@ const Header = () => {
 
             
                 <Link >
-            <Button size="sm" onClick={logout} borderRadius="20px"bg= "#FF4500 "  color= "white"   >
+            <Button fontSize="xs"  onClick={logout} borderRadius="20px"bg= "#FF4500 "  color= "white"     >
               Log Out
             </Button>
             </Link>
