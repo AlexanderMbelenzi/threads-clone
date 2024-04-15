@@ -40,7 +40,7 @@ const SuggestedUsers = () => {
 
 	return (
 
-		<Box mr={"80"}  position="fixed"  ml={4}    marginTop="10px">
+		<Box mr={"80"}  position="fixed"  ml={4}     marginTop="50px">
 
  
                  

@@ -37,7 +37,7 @@ const SideBar = () => {
 
   return (
     <Box position="fixed"  >
-      <Flex direction="column" marginTop="10px" alignItems="flex-start">
+      <Flex direction="column" marginTop="40px" alignItems="flex-start">
         <Box height="full"  flex={20} position="fixed" display={{ base: "none", md: "block" }}>
           <Stack spacing={2} >
 

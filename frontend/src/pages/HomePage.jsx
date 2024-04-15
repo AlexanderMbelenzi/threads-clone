@@ -38,7 +38,7 @@ const HomePage = () => {
 
   return (
 	
-    <Flex gap="10"  mt={10} alignItems="flex-start"  >
+    <Flex gap="10"  mt={5} alignItems="flex-start"  >
       <Box  
 	         flex={23}
         display={{
@@ -48,7 +48,7 @@ const HomePage = () => {
       >
         <SideBar /> {/* Corrected the component name */}
       </Box>
-      <Box flex={58}>
+      <Box flex={58}   marginTop="35px" >
 
 
         {!loading && posts.length === 0 && (
