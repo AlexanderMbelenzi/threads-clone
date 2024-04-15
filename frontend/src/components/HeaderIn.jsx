@@ -39,7 +39,7 @@ const Header = () => {
 
 
 
-                <Link fontSize="md" as={RouterLink} to="/">
+                <Link fontSize="md" as={RouterLink} to="/Home2">
                   For you
                 </Link>
                 <Flex justifyContent="center" alignItems="center">
@@ -51,7 +51,7 @@ const Header = () => {
                     onClick={toggleColorMode}
                   />
                 </Flex>
-                <Link fontSize="md" as={RouterLink} to="/Home2">
+                <Link fontSize="md" as={RouterLink} to="/">
                   Following
                 </Link>
 

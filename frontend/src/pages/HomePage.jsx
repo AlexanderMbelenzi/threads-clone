@@ -48,7 +48,7 @@ const HomePage = () => {
       >
         <SideBar /> {/* Corrected the component name */}
       </Box>
-      <Box flex={58}>
+      <Box flex={58}   marginTop="35px" >
 
 
         {!loading && posts.length === 0 && (
