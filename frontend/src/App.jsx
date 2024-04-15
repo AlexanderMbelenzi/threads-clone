@@ -3,7 +3,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import UserPage from "./pages/UserPage";
 import PostPage from "./pages/PostPage";
 import Header from "./components/HeaderIn";
-import HomePage from "./pages/HomePage";
+import HomePage1 from "./pages/HomePage1";
 import AuthPage from "./pages/AuthPage";
 import { useRecoilValue } from "recoil";
 import userAtom from "./atoms/userAtom";
@@ -21,8 +21,8 @@ function App() {
 <Container maxW={pathname === "/" || pathname === "/Home2" ? { base: "620px", md: "1300px" } : "620px"}>
 <Header />
 <Routes>                
-                    <Route path='/Home2  ' element={user ? <HomePage /> : <Navigate to='/auth' />} />
-                    <Route path='/' element={user ? <HomePage2 /> : <Navigate to='/auth' />} />
+                    <Route path='/' element={user ? <HomePage1 /> : <Navigate to='/auth' />} />
+                    <Route path='/Home2' element={user ? <HomePage2 /> : <Navigate to='/auth' />} />
                     <Route path='/auth' element={!user ? <AuthPage /> : <Navigate to='/' />} />
 					<Route path='/update' element={user ? <UpdateProfilePage /> : <Navigate to='/auth' />} />
 					
