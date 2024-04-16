@@ -11,6 +11,7 @@ import UpdateProfilePage from "./pages/UpdateProfilePage";
 import CreatePost from "./components/CreatePost";
 import ChatPage from "./pages/ChatPage";
 import { SettingsPage } from "./pages/SettingsPage";
+import Controls from "./components/Controls";
 import HomePage2 from "./pages/Homepage2";
 function App() {
 	const user = useRecoilValue(userAtom);
@@ -20,6 +21,7 @@ function App() {
 
 <Container maxW={pathname === "/" || pathname === "/Home2" ? { base: "620px", md: "1300px" } : "620px"}>
 <Header />
+<Controls/>
 <Routes>                
                     <Route path='/' element={user ? <HomePage1 /> : <Navigate to='/auth' />} />
                     <Route path='/Home2' element={user ? <HomePage2 /> : <Navigate to='/auth' />} />
