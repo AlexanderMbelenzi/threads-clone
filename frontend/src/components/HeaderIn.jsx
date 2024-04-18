@@ -32,8 +32,9 @@ const Header = () => {
               </>
             ) : (
               <>
-<Box>
-<Image src={Logo2} mt={-25} mb={-25} alt="Logo"cursor="pointer" 
+<Box  >
+  
+<Image  as={RouterLink} to="/"    src={Logo2} mt={-25} mb={-25} alt="Logo"  cursor="pointer" 
  className="logo" />
 </Box>
 
@@ -42,8 +43,9 @@ const Header = () => {
                 <Link fontSize="md" as={RouterLink} to="/">
                   For you
                 </Link>
-                <Flex justifyContent="center" alignItems="center">
+                <Flex    justifyContent="center" alignItems="center">
                   <Image
+                    
                     cursor="pointer"
                     alt="logo"
                     w={6}

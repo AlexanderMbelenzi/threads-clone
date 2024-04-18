@@ -87,7 +87,7 @@ const CreatePage = () => {
   };
 
   return (
-    <div mt={20}  >
+    <div mt={20}   mr={2}  ml={2}  >
       <h1>Create Post</h1>
       <Modal isOpen={true} onClose={() => {}}>
         <ModalOverlay />
