@@ -137,7 +137,7 @@ const CreatePage = () => {
 
           <ModalFooter>
             <Button
-              colorScheme="#FF4500"
+              colorScheme="orange"
               mr={3}
               onClick={handleCreatePost}
               isLoading={loading}
