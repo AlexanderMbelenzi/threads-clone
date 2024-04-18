@@ -33,9 +33,10 @@ const Header = () => {
             ) : (
               <>
 <Box  >
-  
-<Image  as={RouterLink} to="/"    src={Logo2} mt={-25} mb={-25} alt="Logo"  cursor="pointer" 
+  <Link   as={RouterLink} to="/"  >
+<Image    src={Logo2} mt={-25} mb={-25} alt="Logo"  cursor="pointer" 
  className="logo" />
+ </Link>
 </Box>
 
 
