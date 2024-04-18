@@ -19,7 +19,7 @@ const Header = () => {
     return (
 <Box       >
       <Box   left={0} right={0} maxW="1250"  borderBottom={1} borderBottomColor={colorMode === "light" ? "gray.300" : "#2B2B2B"}  bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"} zIndex="999" position="fixed"  top={0} marginX="auto"    >
-        <Box py={3}   pl="4"    maxW="1300"   pr="4" marginX="auto">
+        <Box py={3}   pl="2"    maxW="1260"   pr="2" marginX="auto">
           <Flex justifyContent="space-between" alignItems="center">
             {!user ? (
               <>
