@@ -7,9 +7,17 @@ import Post from "../components/Post";
 import { useRecoilState } from "recoil";
 import postsAtom from "../atoms/postsAtom";
 import SuggestedUsers from "../components/SuggestedUsers";
+import {  useColorMode ,    } from "@chakra-ui/react";
+
+
+
+
+
+
 
 const HomePage1 = () => {
-	
+  const { colorMode } = useColorMode(); // Hook to access color mode
+
 	const [posts, setPosts] = useRecoilState(postsAtom);
 	const [loading, setLoading] = useState(true);
 	const showToast = useShowToast();
@@ -38,7 +46,7 @@ const HomePage1 = () => {
 
   return (
 	
-    <Flex gap="10"  mt={10} alignItems="flex-start"  >
+    <Flex gap="10"  maxWidth={1250} mt={3.5} alignItems="flex-start"  >
       <Box  
 	         flex={23}
         display={{
@@ -49,7 +57,7 @@ const HomePage1 = () => {
         <SideBar /> {/* Corrected the component name */}
       </Box>
       <Box flex={58} marginTop={35}>
-
+      <Box w="full" h="1px" bg={colorMode === "light" ? "gray.300" : "#2B2B2B"}  mt={4}></Box>
 
         {!loading && posts.length === 0 && (
           <h1>Welcome to bidoi, share your ideas</h1>

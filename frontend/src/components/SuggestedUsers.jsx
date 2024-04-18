@@ -40,15 +40,15 @@ const SuggestedUsers = () => {
 
 	return (
 
-		<Box mr={"80"}  position="fixed"  ml={4}     marginTop="50px">
+		<Box mr={"80"}  position="fixed"  ml={4}     marginTop="55px">
 
  
                  
 					
 		<>
 		<Box>
-		<Flex alignItems="center" gap={2}>
-                <InputGroup size="sm">
+		<Flex alignItems="center" gap={2} as={RouterLink} to="/chat"  >
+                <InputGroup size="sm" >
                     <InputLeftElement pointerEvents="none">
 					<SearchIcon  />
                     </InputLeftElement>

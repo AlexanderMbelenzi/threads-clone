@@ -71,11 +71,11 @@ const PostPage = () => {
 
 	return ( 
 	
-		<Box mt={"5%"}> 
+		<Box mt={"70"}> 
 		<>
 		
 			<Flex>
-				<Flex w={"full"} alignItems={"center"} flex={60} gap={3}>
+				<Flex w={"full"} alignItems={"center"}  gap={3}>
 					<Avatar src={user.profilePic} size={"md"} name='Mark Zuckerberg' />
 					<Flex>
 						<Text fontSize={"sm"} className="truncate-text"   fontWeight={"bold"}>

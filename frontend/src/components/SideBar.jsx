@@ -36,8 +36,8 @@ const SideBar = () => {
   const logout = useLogout();
 
   return (
-    <Box position="fixed"  >
-      <Flex direction="column" marginTop="40px" alignItems="flex-start">
+    <Box position="fixed"  ml={-4} >
+      <Flex direction="column" marginTop="50px" alignItems="flex-start">
         <Box height="full"  flex={20} position="fixed" display={{ base: "none", md: "block" }}>
           <Stack spacing={2} >
 
@@ -94,6 +94,8 @@ const SideBar = () => {
 
             <Flex justifyContent="center">
               <Button
+
+as={RouterLink} to="/CreatePage"
                 style={{
                   marginTop: "20%",
                   backgroundColor: "#FF4500 ",
