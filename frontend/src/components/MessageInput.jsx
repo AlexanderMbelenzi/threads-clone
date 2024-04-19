@@ -82,7 +82,7 @@ const MessageInput = ({ setMessages }) => {
 		}
 	};
 	return (
-		<Flex gap={2}  mb={70} alignItems={"center"}>
+		<Flex gap={2}   alignItems={"center"}>
 			<form onSubmit={handleSendMessage} style={{ flex: 95 }}>
 				<InputGroup>
 					<Input

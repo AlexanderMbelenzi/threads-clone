@@ -6,7 +6,7 @@ import authScreenAtom from "../atoms/authAtom";
 import { Link as RouterLink } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
 import Logo2 from "/public/Reddit.png"; // Import your PNG image
-import Logo3 from "/public/theme.png"; // Import your PNG image
+import Logo3 from "/public/emoji.png"; // Import your PNG image
 import { Container } from "@chakra-ui/react";
 import useLogout from "../hooks/useLogout";
 
