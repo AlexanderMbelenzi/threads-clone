@@ -144,19 +144,7 @@ const Post = ({ post, postedBy }) => {
 								{user?.name}
 							</Text>
 							<Image src='/verified.png' w={4} h={4} ml={1}   />
-							<Text
-							     className="truncate-text"
-							    color={"gray.light"}
-								fontSize={"xs"}
-					
-								fontWeight={"normal"}
-								onClick={(e) => {
-									e.preventDefault();
-									navigate(`/${user.username}`);
-								}}
-							>
-								{user?.username}
-							</Text> 
+							
 							<Box w={0.5} h={0.5} mx={1} borderRadius={"full"} bg={"gray.light"}></Box>
 
 							<Text fontSize={"xs"} textAlign={"left"}  color={"gray.light"}>
