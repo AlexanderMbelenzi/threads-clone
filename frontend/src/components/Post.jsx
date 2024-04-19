@@ -65,7 +65,7 @@ const Post = ({ post, postedBy }) => {
 
 	if (!user) return null;
 	return (
-<Box  wordBreak="break-all"    >
+<Box  wordBreak="break-word"    >
 
 		<Link to={`/${user.username}/post/${post._id}`}>
 			<Flex gap={3} paddingTop={3}>
