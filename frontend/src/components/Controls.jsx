@@ -14,6 +14,10 @@ import useLogout from "../hooks/useLogout";
 import { MdMessage } from "react-icons/md";
 import { AddIcon } from "@chakra-ui/icons";
 import { CgProfile } from "react-icons/cg";
+import { CgHome } from "react-icons/cg";
+import { AiFillHome } from "react-icons/ai";
+import { AiFillMessage } from "react-icons/ai";
+
 
 const Controls = () => {
   const { colorMode } = useColorMode();
@@ -32,20 +36,20 @@ const Controls = () => {
         <Flex justifyContent="space-between" alignItems="center">
           <>
             <Link as={RouterLink} to='/'>
-              <Button size="lg" bg={colorMode === "dark" ? "black" : "white"} borderRadius="20px" leftIcon={<BsHouseAddFill size={30} />} />
+              <Button height="0"  borderRadius="20px"  bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"} zIndex="999"  leftIcon={<CgHome size={30} />} />
             </Link>
             <Link as={RouterLink} to="/chat">
-              <Button size="lg" bg={colorMode === "dark" ? "black" : "white"} borderRadius="20px" leftIcon={<BsSearch size={28} />} />
+              <Button  height="0" bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"} zIndex="999" borderRadius="20px" leftIcon={<BsSearch size={30} />} />
             </Link>
         
             <Link as={RouterLink} to="/CreatePage">
-              <Button size="lg" bg={colorMode === "dark" ? "black" : "white"} borderRadius="20px" ml="1-" leftIcon={<AddIcon size={32} />} />
+              <Button height="0" bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"} zIndex="999" borderRadius="20px" ml="1-" leftIcon={<AddIcon size={30} />} />
             </Link>
             <Link as={RouterLink} to={`/chat`}>
-              <Button size="lg" bg={colorMode === "dark" ? "black" : "white"} borderRadius="20px" ml="1" leftIcon={<MdMessage size={25} />} />
+              <Button  height="0" bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"} zIndex="999" borderRadius="20px" ml="1" leftIcon={<AiFillMessage size={30} />} />
             </Link>
             <Link as={RouterLink} to={`/${user.username}`}>
-              <Button size="lg" bg={colorMode === "dark" ? "black" : "white"} borderRadius="20px" ml="1" leftIcon={<CgProfile size={25} />} />
+              <Button height="0" bg={colorMode === "dark" ? "blackAlpha.800" : "whiteAlpha.800"} zIndex="999" borderRadius="20px" ml="1" leftIcon={<CgProfile size={30} />} />
             </Link>
           </>
         </Flex>
